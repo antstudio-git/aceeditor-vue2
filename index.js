@@ -51,6 +51,7 @@ module.exports = {
     editor.setTheme('ace/theme/' + theme);
     editor.setValue(vm.content, 1);
     editor.setOptions(options);
+    editor.getSession().setUseSoftTabs(true);
     editor.on('change', function () {
       vm.$parent.$emit('editor-update', editor.getValue());
     });
